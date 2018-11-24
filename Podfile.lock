@@ -1,0 +1,42 @@
+PODS:
+  - HMSegmentedControl (1.5.5)
+  - MXParallaxHeader (0.6.1)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SnapKit (4.2.0)
+  - SwiftRandom (1.0.0)
+  - SwiftyStoreKit (0.13.3)
+  - TaskQueue (1.1.1)
+
+DEPENDENCIES:
+  - HMSegmentedControl (= 1.5.5)
+  - MXParallaxHeader (= 0.6.1)
+  - SDWebImage (= 4.4.2)
+  - SnapKit
+  - SwiftRandom (= 1.0.0)
+  - SwiftyStoreKit
+  - TaskQueue
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - HMSegmentedControl
+    - MXParallaxHeader
+    - SDWebImage
+    - SnapKit
+    - SwiftRandom
+    - SwiftyStoreKit
+    - TaskQueue
+
+SPEC CHECKSUMS:
+  HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
+  MXParallaxHeader: 858c403532ed933b381556a81ce333d7065ad182
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftRandom: 437275c63500ddf5a565cbd56996fb23f12cfc3d
+  SwiftyStoreKit: 9ebd15971e28aa2989825fe8bc092eb5f75dd0b2
+  TaskQueue: 53a3cdaf817d9ce3cd50837ff6610aeb7b968997
+
+PODFILE CHECKSUM: d347f952ebbc4b73c8428c9e4b19d7a595aa191d
+
+COCOAPODS: 1.5.3
