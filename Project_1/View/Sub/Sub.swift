@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 class Sub: UIView {
-    var save : UIViewController? = nil
+   weak var save : UIViewController? = nil
     @IBOutlet weak var btnRestore: UIButton!
     @IBOutlet weak var webView: UIView!
     @IBOutlet weak var btnCancel: UIButton!

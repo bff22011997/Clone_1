@@ -9,7 +9,7 @@
 import UIKit
 
 class IOSHomeView: UIView {
-    var custom : SaveViewController? = nil
+   weak var custom : SaveViewController? = nil
     @IBOutlet weak var viewIPX: UIView!
     @IBOutlet weak var viewIP: UIView!
     @IBOutlet var view: UIView!
@@ -32,12 +32,15 @@ class IOSHomeView: UIView {
         btnCancel.addTarget(self, action: #selector(cancel), for: .touchUpInside)
     }
     @objc func cancel() {
-        custom?.viewHome.removeFromSuperview()
-        custom?.viewButtonSave.isHidden = false
-        custom?.viewButtonEdit.isHidden = false
-        custom?.viewButtonHome.isHidden = false
-        custom?.btnBack.isHidden = false
-        custom?.imageBack.isHidden = false
+        UIView.animate(withDuration: 0.3) {
+            self.custom?.viewHome.removeFromSuperview()
+            self.custom?.viewButtonSave.isHidden = false
+            self.custom?.viewButtonEdit.isHidden = false
+            self.custom?.viewButtonHome.isHidden = false
+            self.custom?.btnBack.isHidden = false
+            self.custom?.imageBack.isHidden = false
+        }
+
     }
     
     required init?(coder aDecoder: NSCoder) {

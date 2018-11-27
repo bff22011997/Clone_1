@@ -52,32 +52,33 @@ class DetailsViewController: UIViewController {
             layoutHeight.constant = 80
             lblCategory.text = "Animals"
             textCategory.text = "This page provides you with a broad range of free to use animal pictures. All animal images are licensed under a CC0 license and can be downloaded for free and even be used for commercial purposes."
-            imageHeader.downloaded(from: animanwalls[Int.random(in: 0..<animanwalls.count)].imageUrl ?? animanwalls[0].imageUrl!)
+            imageHeader.sd_setImage(with: URL(string: animanwalls[Int.random(in: 0..<animanwalls.count)].imageUrl ?? animanwalls[0].imageUrl!) , placeholderImage: UIImage(named: "placeholder.jpg"))
+
             break
         case 1:
             lblCategory.text = "Cities"
             textCategory.text = "Find the best street images and street photos. We selected these street pictures ourselves to ensure that all of them are of the highest quality."
-            imageHeader.downloaded(from: cities[Int.random(in: 0..<cities.count)].imageUrl ?? cities[0].imageUrl!)
+            imageHeader.sd_setImage(with: URL(string: cities[Int.random(in: 0..<cities.count)].imageUrl ?? cities[0].imageUrl!) , placeholderImage: UIImage(named: "placeholder.jpg"))
             break
         case 2:
             lblCategory.text = "Fishes"
             textCategory.text = "Find everything from tropical, saltwater to aquarium fish. Our gallery also includes fishing images and photography of meals containing fish."
-            imageHeader.downloaded(from: fishs[Int.random(in: 0..<fishs.count)].imageUrl ?? fishs[0].imageUrl!)
+            imageHeader.sd_setImage(with: URL(string: fishs[Int.random(in: 0..<fishs.count)].imageUrl ?? fishs[0].imageUrl!) , placeholderImage: UIImage(named: "placeholder.jpg"))
             break
         case 3:
             lblCategory.text = "Flowers"
             textCategory.text = "Here you can find different types of flower pictures, among them red flowers, white flowers, rose flowers, spring flowers, flower wallpapers and other flower images."
-            imageHeader.downloaded(from: flowerwall[Int.random(in: 0..<flowerwall.count)].imageUrl ?? flowerwall[0].imageUrl!)
+            imageHeader.sd_setImage(with: URL(string: flowerwall[Int.random(in: 0..<flowerwall.count)].imageUrl ?? flowerwall[0].imageUrl!) , placeholderImage: UIImage(named: "placeholder.jpg"))
             break
         case 4:
             lblCategory.text = "Marco"
             textCategory.text = "Extreme close-up photography, usually of very small subjects and living organisms like insects, in which the size of the subject in the photograph is greater than life size."
-            imageHeader.downloaded(from: macro[Int.random(in: 0..<macro.count)].imageUrl ?? macro[0].imageUrl!)
+            imageHeader.sd_setImage(with: URL(string: macro[Int.random(in: 0..<macro.count)].imageUrl ?? macro[0].imageUrl!) , placeholderImage: UIImage(named: "placeholder.jpg"))
             break
         case 5:
             lblCategory.text = "Sexy"
             textCategory.text = "Scroll through our selection of girl images and girl photos to find the perfect match for your needs."
-            imageHeader.downloaded(from: sexywall[Int.random(in: 0..<sexywall.count)].imageUrl ?? sexywall[0].imageUrl!)
+            imageHeader.sd_setImage(with: URL(string: sexywall[Int.random(in: 0..<sexywall.count)].imageUrl ?? sexywall[0].imageUrl!) , placeholderImage: UIImage(named: "placeholder.jpg"))
             break
         default:
             break
@@ -94,7 +95,7 @@ extension DetailsViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch indexSelected {
         case 0:
-            return animanwalls.count
+            return animanwalls.count / 2
         case 1:
             return cities.count
         case 2:
@@ -104,7 +105,7 @@ extension DetailsViewController : UICollectionViewDataSource {
         case 4:
             return macro.count
         case 5:
-            return sexywall.count
+            return sexywall.count - 1
         default:
             return 0
         }
@@ -116,8 +117,7 @@ extension DetailsViewController : UICollectionViewDataSource {
         cell.imageAllOfCategory.clipsToBounds = true
         switch indexSelected {
         case 0:
-            cell.imageAllOfCategory.sd_setImage(with: URL(string: animanwalls[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "placeholder.jpg"))
-
+            cell.imageAllOfCategory.sd_setImage(with: URL(string: animanwalls[indexPath.row * 2].imageUrl!), placeholderImage: UIImage(named: "placeholder.jpg"))
             break
         case 1:
             cell.imageAllOfCategory.sd_setImage(with: URL(string: cities[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "placeholder.jpg"))

@@ -47,13 +47,13 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBq-UX-JKq">
-                    <rect key="frame" x="62.5" y="158.5" width="250" height="250"/>
+                    <rect key="frame" x="87.5" y="213.5" width="200" height="200"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_edit_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="eps-NO-TIY">
-                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xmo-EM-9Ey">
-                            <rect key="frame" x="10" y="10" width="230" height="200"/>
+                            <rect key="frame" x="10" y="10" width="180" height="150"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</string>
                             <color key="textColor" red="0.66274509803921566" green="0.63921568627450975" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,11 +63,11 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="250" id="BKQ-A5-Nrd"/>
+                        <constraint firstAttribute="width" constant="200" id="BKQ-A5-Nrd"/>
                         <constraint firstItem="eps-NO-TIY" firstAttribute="top" secondItem="DBq-UX-JKq" secondAttribute="top" id="Ilw-Kn-FKX"/>
                         <constraint firstItem="Xmo-EM-9Ey" firstAttribute="top" secondItem="DBq-UX-JKq" secondAttribute="top" constant="10" id="NsT-Od-tOk"/>
                         <constraint firstAttribute="bottom" secondItem="Xmo-EM-9Ey" secondAttribute="bottom" constant="40" id="SKE-ip-him"/>
-                        <constraint firstAttribute="height" constant="250" id="URY-Yi-zfg"/>
+                        <constraint firstAttribute="height" constant="200" id="URY-Yi-zfg"/>
                         <constraint firstAttribute="bottom" secondItem="eps-NO-TIY" secondAttribute="bottom" id="WaI-DW-yjn"/>
                         <constraint firstAttribute="trailing" secondItem="eps-NO-TIY" secondAttribute="trailing" id="ihU-HD-xXC"/>
                         <constraint firstItem="eps-NO-TIY" firstAttribute="leading" secondItem="DBq-UX-JKq" secondAttribute="leading" id="nWe-6e-5c9"/>
@@ -87,7 +87,7 @@
                 <constraint firstItem="rKf-ts-eQC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="i8r-Yt-AX7"/>
                 <constraint firstItem="rKf-ts-eQC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="v5R-Hs-dRQ"/>
                 <constraint firstItem="u4U-8n-0RY" firstAttribute="centerY" secondItem="rKf-ts-eQC" secondAttribute="centerY" id="xmi-P8-hlO"/>
-                <constraint firstItem="DBq-UX-JKq" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-60" id="zE4-RC-iZW"/>
+                <constraint firstItem="DBq-UX-JKq" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-30" id="zE4-RC-iZW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

@@ -100,6 +100,7 @@ class SaveViewController: UIViewController {
         imageScreen.sd_setImage(with: URL(string: linkImage), placeholderImage: UIImage(named: "placeholder.jpg"))
         view_edit.isHidden = true
         editTextView.text = ""
+        editTextView.textColor = UIColor(rgb: 0x05101A)
         editTextView.delegate = self
         btnBack.layer.cornerRadius = 8
         imageScreen.isUserInteractionEnabled = true
@@ -133,22 +134,22 @@ class SaveViewController: UIViewController {
     }
     func setUpView() {
         viewButtonHome.snp.makeConstraints { (make) in
-            make.bottom.equalTo(-20)
-            make.left.equalTo(20)
-            make.height.equalTo(50)
-            make.width.equalTo((UIScreen.main.bounds.width - 80 ) / 3)
+            make.bottom.equalTo(-25)
+            make.left.equalTo(25)
+            make.height.equalTo(60)
+            make.width.equalTo((UIScreen.main.bounds.width - 100 ) / 3)
         }
         viewButtonEdit.snp.makeConstraints { (make) in
-            make.bottom.equalTo(-20)
-            make.right.equalTo(-20)
-            make.height.equalTo(50)
-            make.width.equalTo((UIScreen.main.bounds.width - 80 ) / 3)
+            make.bottom.equalTo(-25)
+            make.right.equalTo(-25)
+            make.height.equalTo(60)
+            make.width.equalTo((UIScreen.main.bounds.width - 100 ) / 3)
         }
         viewButtonSave.snp.makeConstraints { (make) in
-            make.bottom.equalTo(-20)
-            make.left.equalTo(viewButtonHome.snp.right).offset(20)
-            make.height.equalTo(50)
-            make.width.equalTo((UIScreen.main.bounds.width - 80 ) / 3)
+            make.bottom.equalTo(-25)
+            make.left.equalTo(viewButtonHome.snp.right).offset(25)
+            make.height.equalTo(60)
+            make.width.equalTo((UIScreen.main.bounds.width - 100 ) / 3)
         }
         viewButtonHome.addSubview(btnHome)
         btnHome.snp.makeConstraints { (make) in
@@ -196,8 +197,8 @@ class SaveViewController: UIViewController {
         }
     }
     func textToImage(drawText text: String, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
-        let textColor = UIColor(rgb: 0xA9A37E)
-        let textFont = UIFont.systemFont(ofSize: 14)
+        let textColor = UIColor(rgb: 0x05101A)
+        let textFont = UIFont.systemFont(ofSize: 12)
         UIGraphicsBeginImageContextWithOptions(imageScreen.frame.size, false, 2.0)
         
         let textFontAttributes = [
@@ -222,6 +223,7 @@ class SaveViewController: UIViewController {
         viewButtonEdit.isHidden = true
         viewButtonSave.isHidden = true
         btnBack.isHidden = true
+        isShowViewEdit = true
         imageBack.isHidden = true
         view_edit.isHidden = true
         view.addSubview(viewHome)
@@ -233,6 +235,18 @@ class SaveViewController: UIViewController {
         editTextView.text = ""
     }
     @objc func onSave() {
+//        let image = UIImage.imageByMergingImages(topImage: UIImage(named: "image_edit_text.png")! , bottomImage: (self.imageScreen.image!), viewImageFront: self.view_edit, viewImageBottom: (self.view)!)
+//        
+//        let imageAddImage = image
+//        self.imageScreen.image = self.textToImage(drawText: self.editTextView.text, inImage: imageAddImage, atPoint: .zero)
+//        
+//        self.view_edit.isHidden = !self.isShowViewEdit
+//        
+//        guard let selectedImage = self.imageScreen.image else {
+//            print("Image not found!")
+//            return
+//        }
+//        UIImageWriteToSavedPhotosAlbum(selectedImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
         self.checkSubscription(MetaHold.purchaseID.stringValue) { [weak self] success in
             if !success {
                 self?.purchaseSubscription()
@@ -247,19 +261,19 @@ class SaveViewController: UIViewController {
                 }
                 else {
                     let image = UIImage.imageByMergingImages(topImage: UIImage(named: "image_edit_text.png")! , bottomImage: (self?.imageScreen.image!)!, viewImageFront: self!.view_edit, viewImageBottom: (self?.view)!)
-                    
+
                     let imageAddImage = image
                     self!.imageScreen.image = self?.textToImage(drawText: self!.editTextView.text, inImage: imageAddImage, atPoint: .zero)
-                    
+
                     self!.view_edit.isHidden = !self!.isShowViewEdit
-                    
+
                     guard let selectedImage = self!.imageScreen.image else {
                         print("Image not found!")
                         return
                     }
                     UIImageWriteToSavedPhotosAlbum(selectedImage, self, #selector(self!.image(_:didFinishSavingWithError:contextInfo:)), nil)
                 }
-            }
+           }
         }
         
         
@@ -285,14 +299,14 @@ class SaveViewController: UIViewController {
 }
 extension SaveViewController : UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        print(textView.text)
        let hight = textView.text!.height(withConstrainedWidth: textView.frame.width, font: UIFont.systemFont(ofSize: 14))
-        if hight > 200 {
-            let alert = UIAlertController(title: "Notification", message: "Text is too large ", preferredStyle: .alert)
+        if hight > 120 {
+            let alert = UIAlertController(title: "Notification", message: "Text is too long ", preferredStyle: .alert)
             let okBtn = UIAlertAction(title: "OK", style: .default) { (action) in
                 self.dismiss(animated: true, completion: nil)
             }
             alert.addAction(okBtn)
+            editTextView.text.remove(at: editTextView.text.index(before: editTextView.text.endIndex))
             present(alert, animated: true, completion: nil)
         }
     }
@@ -354,3 +368,4 @@ extension UIColor {
         )
     }
 }
+
