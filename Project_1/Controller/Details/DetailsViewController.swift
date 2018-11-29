@@ -143,7 +143,7 @@ extension DetailsViewController : UICollectionViewDataSource {
         let save = SaveViewController()
         switch indexSelected {
         case 0:
-            save.linkImage = animanwalls[indexPath.row].imageUrl!
+            save.linkImage = animanwalls[indexPath.row * 2].imageUrl!
             break
         case 1:
             save.linkImage = cities[indexPath.row].imageUrl!
