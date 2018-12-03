@@ -127,7 +127,7 @@ class SaveViewController: UIViewController {
     @objc func hiddenKeyboard() {
         self.view.endEditing(true)
         collectionView.isHidden = true
-        view_edit.isHidden = true
+        //view_edit.isHidden = true
     }
     @IBAction func getImage(_ sender: Any) {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
